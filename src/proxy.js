@@ -20,7 +20,7 @@ export async function proxy(request) {
 
 
 export const config = {
-  matcher: ['/allbooks', '/myprofile'],
+  matcher: ["/allbooks", "/myprofile"],
 };
 
 
