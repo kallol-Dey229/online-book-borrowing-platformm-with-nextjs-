@@ -5,11 +5,12 @@ import { BsLightningChargeFill } from 'react-icons/bs';
 import { FaBook, FaSearch } from 'react-icons/fa';
 import { GrMoney } from 'react-icons/gr';
 import 'animate.css';
+import { getAllBooks } from '@/lib/data';
 
 export default async function Home() {
 
-  const res = await fetch("http://localhost:3000/books.json");
-  const books = await res.json();
+  
+  const books = await getAllBooks();
 
   return (
     <div className='mx-5 md:mx-30 lg:mx-65'>
