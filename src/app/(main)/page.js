@@ -9,7 +9,7 @@ import { getAllBooks } from '@/lib/data';
 
 export default async function Home() {
 
-  
+ 
   const books = await getAllBooks();
 
   return (
