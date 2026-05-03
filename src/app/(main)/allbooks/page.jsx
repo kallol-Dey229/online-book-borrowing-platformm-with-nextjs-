@@ -10,27 +10,16 @@ const AllBooksPage = () => {
     const [activeCategory, setActiveCategory] = useState("");
 
     useEffect(() => {
-        const fetchBooks = async () => {
-            try {
-                const res = await fetch(
-                    "https://online-book-borrowing-pl-git-fb4010-kalloldey067-6979s-projects.vercel.app/books.json"
-                );
-                const data = await res.json();
-
-                setBooks(data || []);
-                setFilteredBooks(data || []);
-            } catch (error) {
-                console.error("Fetch error:", error);
-            }
-        };
-
-        fetchBooks();
+        fetch("http://localhost:3000/books.json")
+            .then(res => res.json())
+            .then(data => {
+                setBooks(data);
+                setFilteredBooks(data);
+            });
     }, []);
 
     const handleSearch = () => {
-        const expectedBook = books.filter(book =>
-            book?.title?.toLowerCase().includes(searchedBook.toLowerCase())
-        );
+        const expectedBook = books.filter(book => book.title.toLowerCase().includes(searchedBook.toLowerCase()));
 
         setFilteredBooks(expectedBook);
     };
@@ -46,7 +35,6 @@ const AllBooksPage = () => {
                     placeholder="search books"
                     type="text"
                 />
-
                 <button onClick={handleSearch} className="btn btn-primary">
                     Search
                 </button>
@@ -54,19 +42,21 @@ const AllBooksPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-4">
 
+                
                 <div>
                     <AllBooksLeftSidebar
-                        books={books || []}
+                        books={books}
                         setFilteredBooks={setFilteredBooks}
                         activeCategory={activeCategory}
                         setActiveCategory={setActiveCategory}
                     />
                 </div>
 
+                
                 <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {Array.isArray(filteredBooks) &&
+                    {
                         filteredBooks.map(book => (
-                            <BookCard key={book.id || book._id} book={book} />
+                            <BookCard key={book.id} book={book} />
                         ))
                     }
                 </div>
