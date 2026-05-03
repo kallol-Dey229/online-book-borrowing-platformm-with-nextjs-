@@ -43,23 +43,23 @@ const AllBooksPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-4">
 
                 
-                <div>
+                {/* <div>
                     <AllBooksLeftSidebar
                         books={books}
                         setFilteredBooks={setFilteredBooks}
                         activeCategory={activeCategory}
                         setActiveCategory={setActiveCategory}
                     />
-                </div>
+                </div> */}
 
                 
-                <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-4">
+                {/* <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-4">
                     {
                         filteredBooks.map(book => (
                             <BookCard key={book.id} book={book} />
                         ))
                     }
-                </div>
+                </div> */}
 
             </div>
 
