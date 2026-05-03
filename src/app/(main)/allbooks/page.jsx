@@ -10,7 +10,7 @@ const AllBooksPage = () => {
     const [activeCategory, setActiveCategory] = useState("");
 
     useEffect(() => {
-        fetch("http://online-book-borrowing-pl-git-fb4010-kalloldey067-6979s-projects.vercel.app/books.json")
+        fetch("https://online-book-borrowing-pl-git-fb4010-kalloldey067-6979s-projects.vercel.app/books.json")
             .then(res => res.json())
             .then(data => {
                 setBooks(data);
