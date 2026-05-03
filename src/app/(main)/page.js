@@ -5,12 +5,12 @@ import { BsLightningChargeFill } from 'react-icons/bs';
 import { FaBook, FaSearch } from 'react-icons/fa';
 import { GrMoney } from 'react-icons/gr';
 import 'animate.css';
-import { getAllBooks } from '@/lib/data';
+// import { getAllBooks } from '@/lib/data';
 
 export default async function Home() {
 
  
-  const books = await getAllBooks();
+  // const books = await getAllBooks();
 
   return (
     <div className='mx-5 md:mx-30 lg:mx-65'>
@@ -37,11 +37,11 @@ export default async function Home() {
 
       <h2 className='mt-20 font-bold text-2xl'>Top Books</h2>
 
-      <div className='mt-10 grid grid-cols-2 md:grid-cols-3 gap-4'>
+      {/* <div className='mt-10 grid grid-cols-2 md:grid-cols-3 gap-4'>
         {
           books.slice(0, 4).map(book => <BookCard key={book.id} book={book}></BookCard>)
         }
-      </div>
+      </div> */}
 
 
 
@@ -50,14 +50,14 @@ export default async function Home() {
 
 <h2 className="mt-20 font-bold text-2xl">New Arrivals</h2>
 
-<div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+{/* <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
   {books
     .filter(book => book.new_arrival === true)
     .slice(0, 3)
     .map(book => (
       <BookCard key={book.id} book={book} />
     ))}
-</div>
+</div> */}
 
 
 

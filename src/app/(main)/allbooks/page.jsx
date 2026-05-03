@@ -9,14 +9,14 @@ const AllBooksPage = () => {
     const [searchedBook, setSearchedBook] = useState("");
     const [activeCategory, setActiveCategory] = useState("");
 
-    useEffect(() => {
-        fetch("http://localhost:3000/books.json")
-            .then(res => res.json())
-            .then(data => {
-                setBooks(data);
-                setFilteredBooks(data);
-            });
-    }, []);
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/books.json")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setBooks(data);
+    //             setFilteredBooks(data);
+    //         });
+    // }, []);
 
     const handleSearch = () => {
         const expectedBook = books.filter(book => book.title.toLowerCase().includes(searchedBook.toLowerCase()));
