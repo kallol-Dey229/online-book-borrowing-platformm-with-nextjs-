@@ -12,7 +12,7 @@ import { IoMdMenu, IoMdClose } from 'react-icons/io';
 const Navbar = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
-    const imageSrc = user?.image && user.image.startsWith("http") ? user.image : userAvatar;
+    const imageSrc = user?.image && user?.image?.startsWith("http") ? user?.image : userAvatar;
 
     const [open, setOpen] = useState(false);
 
