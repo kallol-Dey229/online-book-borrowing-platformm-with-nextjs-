@@ -26,9 +26,9 @@ const BooksDetails = async ({ params }) => {
 <div>
     {
         session?.user ? (
-            <div className="flex p-5 bg-base-100 shadow-sm mx-5 md:mx-30 lg:mx-65 mt-20">
-            <figure className="">
-                <Image  src={image_url} alt={title} height={250} width={250}></Image>
+            <div className="flex gap-5 p-5 bg-base-100 shadow-sm mx-5 md:mx-30 lg:mx-65 mt-20">
+            <figure className="mt-10 md:mt-0">
+                <Image  src={image_url} alt={title} height={2000} width={2000}></Image>
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
