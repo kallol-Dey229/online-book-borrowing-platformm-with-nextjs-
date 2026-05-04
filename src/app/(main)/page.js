@@ -23,7 +23,7 @@ export default async function Home() {
         }}
       >
         <div className="text-white text-center px-4">
-          <h1 className="mb-5 text-3xl sm:text-4xl md:text-5xl font-bold">
+          <h1 className="mb-5 text-4xl md:text-5xl font-bold">
             Welcome to, Online Book Borrowing Platform
           </h1>
 
@@ -94,13 +94,6 @@ export default async function Home() {
 
       </div>
     </div>
-
-
-
-
-
-
-
 
 
 

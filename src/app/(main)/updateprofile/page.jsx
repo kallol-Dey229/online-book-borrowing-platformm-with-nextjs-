@@ -9,6 +9,12 @@ const UpdateFormPage = () => {
   const [image, setImage] = useState("");
 
   const handleUpdate = async () => {
+
+    if(!name.trim()){
+      toast.error("Name required");
+      return;
+    }
+
     const { data, error } = await authClient.updateUser({
       name: name,
       image: image,
@@ -54,10 +60,11 @@ const UpdateFormPage = () => {
           />
 
 
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
             <button onClick={handleUpdate} className="btn btn-primary">
               Done
             </button>
+            <button className="btn" onClick={()=>{redirect("/myprofile")}}>Cancel</button>
           </div>
 
         </div>
